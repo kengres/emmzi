@@ -14,17 +14,17 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark class="primary">
+    <v-toolbar class="transparent white--text">
       <v-toolbar-side-icon
-        class="hidden-sm-and-up"
+        class="hidden-sm-and-up menuIcon"
         @click.stop="sideNav = !sideNav"></v-toolbar-side-icon>
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">Emmzi.com</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items class="hidden-xs-only white--text">
         <v-btn flat v-for="item in menuItems" :key="item.title" :to="item.link">
-          <v-icon left dark>{{item.icon}}</v-icon>
+          <v-icon left class="white--text">{{item.icon}}</v-icon>
           {{item.title}}
         </v-btn>
       </v-toolbar-items>
