@@ -24,32 +24,30 @@ export default {
     return {
       msg: 'Welcome to the Songs page',
       song1: {
-        title: 'Preparation',
-        author: 'Hans Zimmer/Richard Harvey',
-        url: 'http://devtest.qiniudn.com/Preparation.mp3',
-        pic: 'http://devtest.qiniudn.com/Preparation.jpg',
+        title: 'Love yourself',
+        author: 'Emmily Mathews',
+        url: require('../../assets/music/love-yourself.mp3'),
+        pic: require('../../assets/images/song-cover3.jpg'),
         lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
       },
       song2: {
         title: 'It Ain\'t Me',
         author: 'Emily Matt',
         url: 'static/music/it-aint-me.mp3',
-        pic: 'static/images/song-cover2.jpg'
+        pic: require('../../assets/images/song-cover2.jpg')
       },
       playList: [
         {
-          title: 'Preparation',
+          title: 'Test Song',
           author: 'Hans Zimmer/Richard Harvey',
-          url: 'http://devtest.qiniudn.com/Preparation.mp3',
-          pic: 'static/images/song-cover2.jpg',
-          lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
+          url: require('../../assets/music/songOne.mp3'),
+          pic: require('../../assets/images/song-cover3.jpg')
         },
         {
-          title: 'Preparation2',
+          title: 'Turn the tables',
           author: 'Hans Zimmer/Richard Harvey',
-          url: 'http://devtest.qiniudn.com/Preparation.mp3',
-          pic: 'http://devtest.qiniudn.com/Preparation.jpg',
-          lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
+          url: require('../../assets/music/turning-tables.mp3'),
+          pic: require('../../assets/images/song-cover3.jpg')
         }
       ]
     }

@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
     temporary
     v-model="sideNav"
@@ -14,7 +14,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark class="transparent">
+    <v-toolbar dark class="primary">
       <v-toolbar-side-icon
         class="hidden-sm-and-up menuIcon"
         @click.stop="sideNav = !sideNav"></v-toolbar-side-icon>
