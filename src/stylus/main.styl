@@ -1,0 +1,28 @@
+/** Stylus Styles */
+@require '../../node_modules/vuetify/src/stylus/settings/_colors'
+ 
+$theme := {
+  primary: $lime.darken-2
+  accent: $lime.accent-2
+  secondary: $cyan.accent-2
+  info: $blue.lighten-1
+  warning: $amber.darken-2
+  error: $red.accent-4
+  success: $green.lighten-2
+}
+ 
+@require '../../node_modules/vuetify/src/stylus/main'
+
+body.home
+  overflow: hidden
+nav
+  z-index 3
+.masked
+  .mask
+    background: rgba(0,0,0,.6)
+    z-index: 2
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
