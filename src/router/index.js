@@ -5,6 +5,10 @@ import Contact from '@/views/Contact'
 import Hiphop from '@/views/Hiphop'
 import Poetry from '@/views/Poetry'
 import Songs from '@/views/Songs'
+import Admin from '@/views/AdminViews'
+import Dashboard from '@/views/AdminViews/Dashboard'
+import AdminPages from '@/views/AdminViews/Pages'
+import AdminSongs from '@/views/AdminViews/Songs'
 
 Vue.use(Router)
 
@@ -34,6 +38,28 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin,
+      children: [
+        {
+          path: '/admin',
+          name: 'Dashboard',
+          component: Dashboard
+        },
+        {
+          path: '/admin/pages',
+          name: 'AdminPages',
+          component: AdminPages
+        },
+        {
+          path: '/admin/songs',
+          name: 'AdminSongs',
+          component: AdminSongs
+        }
+      ]
     }
   ],
   mode: 'history'

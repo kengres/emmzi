@@ -48,6 +48,8 @@ export default {
     z-index 1
     background #ccc url('../assets/images/home-cover-mobile.jpg') center/cover no-repeat
 
-    @media screen and (min-width: 600px)
+    @media screen and (min-width: 767px)
       background-image url('../assets/images/home-cover.jpg')
+    @media screen and (min-width: 1024px)
+      background-image url('../assets/images/home-cover-large.jpg')
 </style>

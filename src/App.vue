@@ -1,61 +1,33 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-    temporary
-    v-model="sideNav"
-    >
-      <v-list>
-        <v-list-tile
-        v-for="item in menuItems" :key="item.title" :to="item.link">
-          <v-list-tile-action>
-            <v-icon>{{item.icon}}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{item.title}}</v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar dark class="primary">
-      <v-toolbar-side-icon
-        class="hidden-sm-and-up menuIcon"
-        @click.stop="sideNav = !sideNav"></v-toolbar-side-icon>
-      <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">Emmzi.com</router-link>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only ">
-        <v-btn flat v-for="item in menuItems" :key="item.title" :to="item.link">
-          <v-icon left class="">{{item.icon}}</v-icon>
-          {{item.title}}
-        </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+    <App-Header v-if="!isAdmin"></App-Header>
+    <App-Header-Admin v-else></App-Header-Admin>
     <main>
       <router-view></router-view>
     </main>
-    <v-footer :fixed="fixedFooter" class="primary pa-4" light>
-      <v-spacer></v-spacer>
-      <span class="white--text">Copyrights © {{ new Date().getFullYear() }} Emmzi.com</span>
-    </v-footer>
+    <App-Footer></App-Footer>
   </v-app>
 </template>
 
 <script>
+  import Header from './components/Header'
+  import HeaderAdmin from './components/HeaderAdmin'
+  import Footer from './components/Footer'
   export default {
-    data () {
-      return {
-        sideNav: false,
-        iconClass: 'testing',
-        menuItems: [
-          {title: 'Songs', link: '/songs', icon: 'library_music'},
-          {title: 'Hiphop', link: '/hiphop', icon: 'headset_mic'},
-          {title: 'Poetry', link: '/poetry', icon: 'edit'},
-          {title: 'Contact', link: '/contact', icon: 'contact_mail'}
-        ]
-      }
+    components: {
+      'AppHeader': Header,
+      'AppHeaderAdmin': HeaderAdmin,
+      'AppFooter': Footer
+    },
+    created () {
+      console.log(this.$route.path)
     },
     computed: {
-      fixedFooter () {
-        return this.$store.getters.fixedFooter
+      isAdmin () {
+        if ((this.$route.path).indexOf('/admin') !== -1) {
+          return true
+        }
+        return false
       }
     }
   }
