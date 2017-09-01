@@ -1,7 +1,7 @@
 <template>
-  <div>
-    Home Component
-  </div>
+  <v-app dark>
+    
+  </v-app>
 </template>
 <script>
 export default {
