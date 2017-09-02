@@ -34,8 +34,7 @@ export default {
   },
   methods: {
     testApi () {
-      // var apiUrl = 'http://cl02793.tmweb.ru/public/api/customers'
-      var apiUrl = 'http://slimapp.dev/api/customers'
+      var apiUrl = 'http://slimapp.dev/api/types'
       this.$http.get(apiUrl).then(response => {
         console.log('response: ', response.data)
       }, response => {

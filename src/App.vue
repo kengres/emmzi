@@ -15,3 +15,4 @@
 
   }
 </style>
+<style src="vue-notifyjs/themes/default.css"></style>

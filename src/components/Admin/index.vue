@@ -1,10 +1,11 @@
 <template>
   <v-app>
-    <v-navigation-drawer 
+    <v-navigation-drawer
+      dark 
       v-model='drawer'
       :mini-variant.sync="mini"
       permanent floating enable-resize-watcher>
-      <v-list>
+      <v-list dense >
         <template v-for="(item, i) in menu">
           <v-list-group v-if="item.items" :group='item.group' :key="item.items.title">
             <v-list-tile :to='item.href' slot='item' :title="item.title">
@@ -57,6 +58,9 @@
         </template>
       </v-list>
     </v-navigation-drawer>
+
+    <notifications></notifications>
+
     <v-toolbar darken-1 fixed dark :class="theme">
       <v-toolbar-side-icon @click.native.stop='drawer = !drawer'></v-toolbar-side-icon>
       <v-toolbar-title>Title dynamic</v-toolbar-title>
