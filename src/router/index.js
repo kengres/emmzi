@@ -10,6 +10,8 @@ import Songs from '@/views/Songs'
 import Dashboard from '@/views/AdminViews/Dashboard'
 import CrudForm from '@/views/AdminViews/Pages/CrudForm'
 import CrudGrid from '@/views/AdminViews/Pages/CrudGrid'
+import Login from '@/views/AdminViews/Pages/Login'
+import Error from '@/views/AdminViews/Pages/Error'
 import Settings from '@/views/AdminViews/Pages/Settings'
 
 Vue.use(Router)
@@ -46,6 +48,18 @@ export default new Router({
           component: Contact
         }
       ]
+    },
+    {
+      exact: true,
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      exact: true,
+      path: '/error',
+      name: 'Error',
+      component: Error
     },
     {
       path: '/admin',

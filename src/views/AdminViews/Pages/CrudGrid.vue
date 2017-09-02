@@ -1,5 +1,5 @@
 <template>
   <div>
-      crudgrid
+    this is the crud grid
   </div>
 </template>

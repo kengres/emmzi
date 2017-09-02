@@ -1,6 +1,10 @@
 <template>
   <div>
-    Home Component
+    <div class="text-center">
+      <v-card>
+        <v-card-text>Home Component</v-card-text>
+      </v-card>
+    </div>
   </div>
 </template>
 <script>
